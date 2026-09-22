@@ -8,6 +8,8 @@
 
 :::{proc} Entkalkung starten
 :id: PROC_ENTKALKEN_START
+:status: review
+:autor: M. Brandt
 :warns: WARN_ENTKALKER, WARN_NETZ
 
 1. Entnehmen Sie den Wassertank und lösen Sie den Entkalker nach Herstellerangabe
@@ -21,6 +23,8 @@
 
 :::{proc} Entkalkungsprogramm durchlaufen lassen
 :id: PROC_ENTKALKEN_LAUF
+:status: entwurf
+:autor: M. Brandt
 :warns: WARN_ENTKALKER
 
 1. Starten Sie das Programm zum {need}`GLOSS_ENTKALKEN` im Menü.

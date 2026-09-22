@@ -5,6 +5,9 @@
 
 :::{proc} Tresterbehälter leeren
 :id: PROC_TRESTER
+:status: freigegeben
+:autor: M. Brandt
+:geprueft_am: 2026-04-28
 
 1. Öffnen Sie die Servicetür an der rechten Geräteseite.
 2. Ziehen Sie den {need}`GLOSS_TRESTERBEHAELTER` zusammen mit der Restwasserschale
@@ -19,6 +22,9 @@ Das Gerät meldet den vollen Behälter nach zwölf Portionen.
 
 :::{proc} Brühgruppe spülen
 :id: PROC_BRUEHGRUPPE
+:status: freigegeben
+:autor: M. Brandt
+:geprueft_am: 2026-04-28
 :warns: WARN_OBERFLAECHE, WARN_NETZ
 
 1. Schalten Sie das Gerät aus und lassen Sie es abkühlen.
@@ -32,6 +38,8 @@ Das Gerät meldet den vollen Behälter nach zwölf Portionen.
 
 :::{proc} Milchsystem reinigen
 :id: PROC_MILCHSYSTEM
+:status: review
+:autor: S. Ostermann
 :warns: WARN_DAMPF
 
 1. Starten Sie nach jedem Milchbezug das Spülprogramm des {need}`Milchsystems <GLOSS_MILCHSYSTEM>`.

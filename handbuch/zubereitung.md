@@ -7,6 +7,9 @@
 
 :::{proc} Kaffeestärke wählen
 :id: PROC_STAERKE
+:status: freigegeben
+:autor: S. Ostermann
+:geprueft_am: 2026-06-03
 :warns: WARN_OBERFLAECHE
 
 1. Drücken Sie die Stärketaste, bis die gewünschte Stufe leuchtet.
@@ -26,6 +29,8 @@ Alle drei Stufen beziehen 180 ml. Die Durchlaufzeit beträgt 3, 4 beziehungsweis
 
 :::{proc} Milchgetränk zubereiten
 :id: PROC_MILCHGETRAENK
+:status: review
+:autor: S. Ostermann
 :warns: WARN_DAMPF
 
 1. Hängen Sie den Ansaugschlauch in ein Gefäß mit kalter Milch.
@@ -42,6 +47,8 @@ Das {need}`GLOSS_MILCHSYSTEM` spült sich nach jedem Bezug selbst.
 
 :::{proc} Heißwasser beziehen
 :id: PROC_HEISSWASSER
+:status: entwurf
+:autor: S. Ostermann
 :warns: WARN_OBERFLAECHE
 
 1. Stellen Sie ein hitzebeständiges Gefäß unter den Auslauf.

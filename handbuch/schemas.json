@@ -2,6 +2,14 @@
   "$defs": {
     "type-warn": {
       "properties": { "type": { "const": "warn" } }
+    },
+    "type-proc": {
+      "properties": { "type": { "const": "proc" } }
+    },
+    "eigene-typen": {
+      "properties": {
+        "type": { "enum": ["term", "warn", "proc"] }
+      }
     }
   },
   "schemas": [
@@ -17,6 +25,39 @@
             "signalwort": {
               "type": "string",
               "enum": ["GEFAHR", "WARNUNG", "VORSICHT", "ACHTUNG"]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "freigegebenes-braucht-pruefdatum",
+      "severity": "warning",
+      "message": "Eine freigegebene Handlungsanweisung braucht ein Pruefdatum in 'geprueft_am'.",
+      "select": {
+        "allOf": [
+          { "$ref": "#/$defs/type-proc" },
+          { "properties": { "status": { "const": "freigegeben" } } }
+        ]
+      },
+      "validate": {
+        "local": {
+          "required": ["geprueft_am"],
+          "properties": { "geprueft_am": { "type": "string", "minLength": 1 } }
+        }
+      }
+    },
+    {
+      "id": "status-ist-gueltig",
+      "severity": "violation",
+      "message": "Erlaubte Status sind entwurf, review und freigegeben.",
+      "select": { "$ref": "#/$defs/eigene-typen" },
+      "validate": {
+        "local": {
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": ["entwurf", "review", "freigegeben"]
             }
           }
         }

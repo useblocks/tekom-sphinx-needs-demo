@@ -5,6 +5,9 @@
 
 :::{proc} Gerät aufstellen
 :id: PROC_AUFSTELLEN
+:status: freigegeben
+:autor: M. Brandt
+:geprueft_am: 2026-05-12
 :warns: WARN_NETZ
 
 1. Stellen Sie das Gerät auf eine trockene, ebene Fläche.
@@ -17,6 +20,9 @@
 
 :::{proc} Wassertank füllen
 :id: PROC_WASSERTANK
+:status: freigegeben
+:autor: M. Brandt
+:geprueft_am: 2026-05-12
 :warns: WARN_OBERFLAECHE
 
 1. Nehmen Sie den Wassertank nach oben heraus.

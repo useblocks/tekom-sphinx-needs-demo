@@ -113,6 +113,14 @@ nullable = true
 # Ein Enum an dieser Stelle würde jeden Fehler ein zweites Mal melden,
 # und zwar mit einer englischen Meldung.
 
+[needs.fields.autor]
+description = "Verantwortliche Redakteurin oder Redakteur"
+nullable = true
+
+[needs.fields.geprueft_am]
+description = "Datum der letzten fachlichen Prüfung"
+nullable = true
+
 ###############################################################################
 # Verknüpfungen
 ###############################################################################

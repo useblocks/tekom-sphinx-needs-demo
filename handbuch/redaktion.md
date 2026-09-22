@@ -1,34 +1,49 @@
 # Redaktionsübersicht
 
-Diese Seite richtet sich nicht an die Nutzerin, sondern an die Redaktion. Sie wird von
-Hand gepflegt und muss nach jeder Änderung nachgezogen werden.
+Diese Seite richtet sich nicht an die Nutzerin, sondern an die Redaktion. Sie entsteht
+vollständig aus den Daten der Anleitung — hier wird nichts gepflegt.
 
-Die Anleitung enthält 10 Handlungsanweisungen, davon 5 freigegeben.
-Stand: 12.05.2026.
+Die Anleitung enthält {need_count}`type == "proc"` Handlungsanweisungen, davon
+{need_count}`type == "proc" and status == "freigegeben"` freigegeben.
 
-| Kapitel | Abschnitt | Status | Autor | Geprüft am |
-|---|---|---|---|---|
-| Inbetriebnahme | Gerät aufstellen | freigegeben | M. Brandt | 2026-05-12 |
-| Inbetriebnahme | Wassertank füllen | freigegeben | M. Brandt | 2026-05-12 |
-| Zubereitung | Kaffeestärke wählen | freigegeben | S. Ostermann | 2026-06-03 |
-| Zubereitung | Milchgetränk zubereiten | review | S. Ostermann | — |
-| Zubereitung | Heißwasser beziehen | entwurf | S. Ostermann | — |
-| Reinigung | Tresterbehälter leeren | freigegeben | M. Brandt | 2026-04-28 |
-| Reinigung | Brühgruppe spülen | freigegeben | M. Brandt | 2026-04-28 |
-| Reinigung | Milchsystem reinigen | review | S. Ostermann | — |
-| Entkalken | Entkalkung starten | review | M. Brandt | — |
-| Entkalken | Programm durchlaufen lassen | entwurf | M. Brandt | — |
+## Bearbeitungsstand
+
+:::{needpie} Handlungsanweisungen nach Status
+:labels: Entwurf, Review, Freigegeben
+
+type == "proc" and status == "entwurf"
+type == "proc" and status == "review"
+type == "proc" and status == "freigegeben"
+:::
+
+## Offene Entwürfe
+
+:::{needtable}
+:filter: status == "entwurf"
+:columns: id, title as "Titel", autor as "Autor"
+:style: table
+:sort: id
+:::
 
 ## Wo steht welcher Warnhinweis?
 
-Auch diese Liste pflegen wir von Hand. Sie nennt nur die Kapitel. Ob der Hinweis
-innerhalb eines Kapitels an jeder Stelle steht, an der er gilt, sieht man ihr nicht an.
-Beim letzten Umbau ist genau so eine Stelle übersehen worden.
+Die Liste entsteht aus den Verknüpfungen der Handlungsanweisungen. Sie nennt jede
+Anweisung, für die ein Hinweis gilt, nicht nur das Kapitel.
 
-| Hinweis | Kapitel |
-|---|---|
-| Elektrischer Schlag | Sicherheit, Inbetriebnahme, Reinigung, Entkalken |
-| Heißer Dampf | Sicherheit, Zubereitung, Reinigung |
-| Entkalkerlösung | Sicherheit, Entkalken (zweimal) |
-| Heiße Oberflächen | Sicherheit, Inbetriebnahme, Zubereitung, Reinigung |
-| Mahlwerk | Sicherheit |
+:::{needtable}
+:filter: type == "warn"
+:columns: title as "Warnhinweis", signalwort as "Signalwort", warns_back as "gilt für"
+:style: table
+:sort: title
+:::
+
+## Begriffe ohne Verwendung
+
+Glossarbegriffe, die in keiner Handlungsanweisung erwähnt werden.
+
+:::{needtable}
+:filter: type == "term" and len(mentions_back) == 0
+:columns: title as "Begriff", id
+:style: table
+:filter_warning: Jeder Begriff wird mindestens einmal erwähnt.
+:::

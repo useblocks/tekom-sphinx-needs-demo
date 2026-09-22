@@ -47,3 +47,23 @@ Glossarbegriffe, die in keiner Handlungsanweisung erwähnt werden.
 :style: table
 :filter_warning: Jeder Begriff wird mindestens einmal erwähnt.
 :::
+
+## Gefährdungen aus der Risikobeurteilung
+
+Die folgenden Gefährdungen stammen aus dem Projekt der Risikobeurteilung und werden
+als Datei importiert.
+
+:::{needimport} gefaehrdungen
+:filter: type == "hazard"
+:::
+
+## Abdeckung der Gefährdungen
+
+Jede Gefährdung muss von mindestens einem Warnhinweis abgedeckt sein. Die Regel steht
+in `schemas.json` und wird bei jedem Build geprüft.
+
+:::{needflow} Warnhinweise und Gefährdungen
+:filter: type in ["warn", "hazard"]
+:link_types: covers
+:config: lefttoright
+:::

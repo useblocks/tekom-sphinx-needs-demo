@@ -54,6 +54,10 @@ role_need_template = "{{ title }}"
 # https://sphinx-needs.readthedocs.io/en/latest/schema/index.html
 schema_definitions_from_json = "schemas.json"
 
+# Benannter Importschlüssel, damit in der Quelldatei kein Pfad steht.
+[needs.import_keys]
+gefaehrdungen = "/_data/gefaehrdungen.json"
+
 ###############################################################################
 # Need-Typen
 ###############################################################################
@@ -70,6 +74,15 @@ directive = "warn"
 title = "Warnhinweis"
 prefix = "WARN_"
 color = "#F5B041"
+style = "node"
+
+# Identisch zur Definition im Schwesterprojekt, damit eine Gefährdung
+# in beiden Projekten gleich aussieht.
+[[needs.types]]
+directive = "hazard"
+title = "Gefährdung"
+prefix = "HAZ_"
+color = "#DC143C"
 style = "node"
 
 [[needs.types]]
@@ -150,6 +163,11 @@ parse_variants = true
 ###############################################################################
 # Verknüpfungen
 ###############################################################################
+
+[needs.links.covers]
+outgoing = "deckt ab"
+incoming = "wird abgedeckt durch"
+color = "#DC143C"
 
 [needs.links.warns]
 outgoing = "Sicherheitshinweise"

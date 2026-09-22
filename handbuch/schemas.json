@@ -3,6 +3,9 @@
     "type-warn": {
       "properties": { "type": { "const": "warn" } }
     },
+    "type-hazard": {
+      "properties": { "type": { "const": "hazard" } }
+    },
     "type-proc": {
       "properties": { "type": { "const": "proc" } }
     },
@@ -26,6 +29,39 @@
               "type": "string",
               "enum": ["GEFAHR", "WARNUNG", "VORSICHT", "ACHTUNG"]
             }
+          }
+        }
+      }
+    },
+    {
+      "id": "warn-deckt-gefaehrdung",
+      "severity": "violation",
+      "message": "Jeder Warnhinweis muss ueber 'covers' auf mindestens eine Gefaehrdung verweisen.",
+      "select": { "$ref": "#/$defs/type-warn" },
+      "validate": {
+        "local": {
+          "required": ["covers"],
+          "properties": {
+            "covers": { "type": "array", "minItems": 1 }
+          }
+        },
+        "network": {
+          "covers": {
+            "items": { "local": { "$ref": "#/$defs/type-hazard" } }
+          }
+        }
+      }
+    },
+    {
+      "id": "gefaehrdung-ist-abgedeckt",
+      "severity": "violation",
+      "message": "Zu dieser Gefaehrdung gibt es keinen Warnhinweis im Handbuch.",
+      "select": { "$ref": "#/$defs/type-hazard" },
+      "validate": {
+        "network_back": {
+          "covers": {
+            "contains": { "local": { "$ref": "#/$defs/type-warn" } },
+            "minContains": 1
           }
         }
       }

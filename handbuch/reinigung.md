@@ -33,6 +33,8 @@ Das Gerät meldet den vollen Behälter nach zwölf Portionen.
    abtropfen.
 :::
 
+::::{if} var.ausstattung.milchsystem
+
 :::{needextract} WARN_DAMPF
 :::
 
@@ -40,6 +42,7 @@ Das Gerät meldet den vollen Behälter nach zwölf Portionen.
 :id: PROC_MILCHSYSTEM
 :status: review
 :autor: S. Ostermann
+:requires: FEAT_MILCHSYSTEM
 :warns: WARN_DAMPF
 
 1. Starten Sie nach jedem Milchbezug das Spülprogramm des {need}`Milchsystems <GLOSS_MILCHSYSTEM>`.
@@ -48,3 +51,4 @@ Das Gerät meldet den vollen Behälter nach zwölf Portionen.
    zusammen.
 :::
 
+::::

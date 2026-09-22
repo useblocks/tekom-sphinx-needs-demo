@@ -1,0 +1,16 @@
+{
+  "produkt": { "name": "BrewMaster Pro 3000 Compact", "id": "compact" },
+  "ausstattung": {
+    "milchsystem": false,
+    "app": false,
+    "heisswasser": true,
+    "doppeltasse": false,
+    "keramikmahlwerk": true
+  },
+  "technik": {
+    "tankvolumen": "1,4 l",
+    "bohnenbehaelter": "250 g",
+    "netzspannung": "230 V",
+    "leistung": "1250 W"
+  }
+}

@@ -8,7 +8,7 @@
     },
     "eigene-typen": {
       "properties": {
-        "type": { "enum": ["term", "warn", "proc"] }
+        "type": { "enum": ["term", "warn", "proc", "feature", "variant"] }
       }
     }
   },

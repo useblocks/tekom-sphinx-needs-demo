@@ -28,6 +28,12 @@ index_on_save = true
 flavour = "myst"
 extensions = ["colon_fence"]
 
+# Sphinx haelt _data ueber exclude_patterns aus dem Build heraus. ubCode
+# braucht denselben Ausschluss, sonst zaehlt _data/varianten/README.md als
+# Quelldatei ohne toctree-Eintrag.
+[source]
+extend_exclude = ["_data"]
+
 # Alle Needs-Konfigurationen stehen in der needs-Tabelle.
 # Die Schlüssel tragen dabei kein needs_-Präfix.
 [needs]
@@ -71,6 +77,20 @@ directive = "proc"
 title = "Handlungsanweisung"
 prefix = "PROC_"
 color = "#58D68D"
+style = "node"
+
+[[needs.types]]
+directive = "feature"
+title = "Produktmerkmal"
+prefix = "FEAT_"
+color = "#AF7AC5"
+style = "node"
+
+[[needs.types]]
+directive = "variant"
+title = "Produktvariante"
+prefix = "VAR_"
+color = "#85929E"
 style = "node"
 
 ###############################################################################
@@ -121,6 +141,12 @@ nullable = true
 description = "Datum der letzten fachlichen Prüfung"
 nullable = true
 
+# Feld mit Variantenauflösung: <{ var.produkt.name }>
+[needs.fields.geraet]
+description = "Gerätebezeichnung der gebauten Variante"
+nullable = true
+parse_variants = true
+
 ###############################################################################
 # Verknüpfungen
 ###############################################################################
@@ -137,3 +163,13 @@ outgoing = "erwähnt"
 incoming = "wird erwähnt in"
 color = "#5DADE2"
 predicates = [["type == 'proc'", "[[links_from_content()]]"]]
+
+[needs.links.requires]
+outgoing = "benötigt"
+incoming = "benötigt für"
+color = "#AF7AC5"
+
+[needs.links.has_features]
+outgoing = "Ausstattung"
+incoming = "enthalten in"
+color = "#85929E"

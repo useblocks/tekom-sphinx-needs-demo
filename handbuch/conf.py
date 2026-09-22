@@ -17,7 +17,11 @@ myst_enable_extensions = ["colon_fence"]
 # Sphinx-Needs-Konfiguration aus der TOML-Datei.
 needs_from_toml = "ubproject.toml"
 
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
+# Variantendaten. Überschreibbar beim Bauen:
+#   sphinx-build -D needs_variant_data_file=_data/varianten/compact.json
+needs_variant_data_file = "_data/varianten/plus.json"
+
+exclude_patterns = ["_build", "_data", "Thumbs.db", ".DS_Store"]
 
 html_theme = "furo"
 

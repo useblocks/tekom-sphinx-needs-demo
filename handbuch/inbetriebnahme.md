@@ -8,6 +8,7 @@
 :status: freigegeben
 :autor: M. Brandt
 :geprueft_am: 2026-05-12
+:geraet: <{ var.produkt.name }>
 :warns: WARN_NETZ
 
 1. Stellen Sie das Gerät auf eine trockene, ebene Fläche.

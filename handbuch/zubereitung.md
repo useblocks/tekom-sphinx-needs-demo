@@ -22,6 +22,8 @@ Alle drei Stufen beziehen 180 ml. Die Durchlaufzeit beträgt 3, 4 beziehungsweis
 {need}`GLOSS_BRUEHGRUPPE`.
 :::
 
+::::{if} var.ausstattung.milchsystem
+
 ## Milchgetränke
 
 :::{needextract} WARN_DAMPF
@@ -31,6 +33,7 @@ Alle drei Stufen beziehen 180 ml. Die Durchlaufzeit beträgt 3, 4 beziehungsweis
 :id: PROC_MILCHGETRAENK
 :status: review
 :autor: S. Ostermann
+:requires: FEAT_MILCHSYSTEM
 :warns: WARN_DAMPF
 
 1. Hängen Sie den Ansaugschlauch in ein Gefäß mit kalter Milch.
@@ -39,6 +42,8 @@ Alle drei Stufen beziehen 180 ml. Die Durchlaufzeit beträgt 3, 4 beziehungsweis
 
 Das {need}`GLOSS_MILCHSYSTEM` spült sich nach jedem Bezug selbst.
 :::
+
+::::
 
 ## Heißwasser
 
@@ -49,6 +54,7 @@ Das {need}`GLOSS_MILCHSYSTEM` spült sich nach jedem Bezug selbst.
 :id: PROC_HEISSWASSER
 :status: entwurf
 :autor: S. Ostermann
+:requires: FEAT_HEISSWASSER
 :warns: WARN_OBERFLAECHE
 
 1. Stellen Sie ein hitzebeständiges Gefäß unter den Auslauf.

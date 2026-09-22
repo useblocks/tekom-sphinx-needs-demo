@@ -1,0 +1,16 @@
+{
+  "produkt": { "name": "BrewMaster Pro 3000", "id": "pro" },
+  "ausstattung": {
+    "milchsystem": true,
+    "app": false,
+    "heisswasser": true,
+    "doppeltasse": true,
+    "keramikmahlwerk": true
+  },
+  "technik": {
+    "tankvolumen": "2,2 l",
+    "bohnenbehaelter": "400 g",
+    "netzspannung": "230 V",
+    "leistung": "1450 W"
+  }
+}

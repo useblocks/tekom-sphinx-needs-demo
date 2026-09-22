@@ -1,0 +1,53 @@
+"$schema" = "https://ubcode.useblocks.com/ubproject.schema.json"
+
+# Sphinx-Needs-Konfiguration im TOML-Format.
+# Eingebunden per `needs_from_toml = "ubproject.toml"` in conf.py.
+# Deklarative Konfiguration statt Python: lesbar, und ubCode kann sie direkt verwenden.
+# Aufbau wie im Schwesterprojekt ../sphinx-needs-demo/docs/ubproject.toml
+
+[project]
+name = "BrewMaster Pro 3000 – Benutzerhandbuch"
+description = "Benutzerdokumentation zum Kaffeevollautomaten BrewMaster Pro 3000"
+srcdir = "."
+
+[server]
+index_on_save = true
+
+###############################################################################
+# Quellen und Parser
+###############################################################################
+
+# Ohne diese Tabelle parst ubCode jede Datei als reStructuredText und sucht
+# beim Entdecken nur nach *.rst — das Handbuch besteht aber ausschliesslich
+# aus Markdown, und die Vorschau bliebe leer.
+# Sobald eine [parse.parsers.*]-Tabelle existiert, ist die Liste der Parser
+# vollstaendig. Ein reiner Markdown-Eintrag genuegt, weil es keine RST-Dateien
+# gibt; kaemen welche dazu, muesste zusaetzlich [parse.parsers.rst] stehen.
+# colon_fence spiegelt myst_enable_extensions aus conf.py.
+[parse.parsers.md]
+flavour = "myst"
+extensions = ["colon_fence"]
+
+# Alle Needs-Konfigurationen stehen in der needs-Tabelle.
+# Die Schlüssel tragen dabei kein needs_-Präfix.
+[needs]
+build_json = true
+
+# IDs werden von Hand vergeben. Sonst leitet Sphinx-Needs sie aus dem Titel ab,
+# und eine Titeländerung zerreißt alle Verknüpfungen.
+id_required = true
+id_regex = "[A-Z][A-Z0-9_]{2,40}"
+
+# Diagramme über Graphviz statt PlantUML: kein Java, schnelle Builds.
+flow_engine = "graphviz"
+
+###############################################################################
+# Need-Typen
+###############################################################################
+
+[[needs.types]]
+directive = "proc"
+title = "Handlungsanweisung"
+prefix = "PROC_"
+color = "#58D68D"
+style = "node"

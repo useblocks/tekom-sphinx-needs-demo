@@ -1,4 +1,5 @@
 # Konfiguration des Sphinx-Builds.
+# Alles, was Sphinx-Needs betrifft, steht in ubproject.toml.
 
 project = "BrewMaster Pro 3000"
 copyright = "2026, BrewMaster Appliances GmbH"
@@ -7,9 +8,14 @@ language = "de"
 
 extensions = [
     "myst_parser",
+    "sphinx_needs",
 ]
 
+# Colon-Fences sind ohne diese Zeile nicht verfuegbar.
 myst_enable_extensions = ["colon_fence"]
+
+# Sphinx-Needs-Konfiguration aus der TOML-Datei.
+needs_from_toml = "ubproject.toml"
 
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 

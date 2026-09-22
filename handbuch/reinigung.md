@@ -1,9 +1,6 @@
 # Reinigung
 
-:::{danger} GEFAHR — Lebensgefahr durch elektrischen Schlag
-Schließen Sie das Gerät nur an eine geerdete Steckdose an und halten Sie Netzkabel
-und Stecker trocken. Tauchen Sie das Gerät nicht ein und halten Sie das Gehäuse nicht
-unter fließendes Wasser. Ziehen Sie vor jeder Reinigung den Netzstecker.
+:::{needextract} WARN_NETZ
 :::
 
 :::{proc} Tresterbehälter leeren
@@ -17,13 +14,12 @@ unter fließendes Wasser. Ziehen Sie vor jeder Reinigung den Netzstecker.
 Das Gerät meldet den vollen Behälter nach zwölf Portionen.
 :::
 
-:::{caution} VORSICHT — Heiße Oberflächen
-Brühgruppe, Auslauf und Tassenablage werden im Betrieb heiß. Das Gerät erhitzt das
-Wasser auf 85 bis 95 °C. Berühren Sie diese Teile erst, wenn sie abgekühlt sind.
+:::{needextract} WARN_OBERFLAECHE
 :::
 
 :::{proc} Brühgruppe spülen
 :id: PROC_BRUEHGRUPPE
+:warns: WARN_OBERFLAECHE, WARN_NETZ
 
 1. Schalten Sie das Gerät aus und lassen Sie es abkühlen.
 2. Entnehmen Sie die {need}`GLOSS_BRUEHGRUPPE` über die Servicetür.
@@ -31,13 +27,12 @@ Wasser auf 85 bis 95 °C. Berühren Sie diese Teile erst, wenn sie abgekühlt si
    abtropfen.
 :::
 
-:::{warning} WARNUNG — Verbrühungsgefahr durch heißen Dampf
-Beim Aufschäumen und beim Spülen tritt heißer Dampf aus dem Milchsystem aus. Greifen
-Sie nicht in den Dampfstrahl und verstellen Sie die Düse nicht während des Betriebs.
+:::{needextract} WARN_DAMPF
 :::
 
 :::{proc} Milchsystem reinigen
 :id: PROC_MILCHSYSTEM
+:warns: WARN_DAMPF
 
 1. Starten Sie nach jedem Milchbezug das Spülprogramm des {need}`Milchsystems <GLOSS_MILCHSYSTEM>`.
 2. Zerlegen Sie den Aufschäumer einmal wöchentlich.

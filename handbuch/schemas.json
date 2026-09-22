@@ -1,0 +1,26 @@
+{
+  "$defs": {
+    "type-warn": {
+      "properties": { "type": { "const": "warn" } }
+    }
+  },
+  "schemas": [
+    {
+      "id": "warn-braucht-signalwort",
+      "severity": "violation",
+      "message": "Jeder Warnhinweis braucht ein Signalwort: GEFAHR, WARNUNG, VORSICHT oder ACHTUNG.",
+      "select": { "$ref": "#/$defs/type-warn" },
+      "validate": {
+        "local": {
+          "required": ["signalwort"],
+          "properties": {
+            "signalwort": {
+              "type": "string",
+              "enum": ["GEFAHR", "WARNUNG", "VORSICHT", "ACHTUNG"]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

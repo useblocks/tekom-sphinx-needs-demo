@@ -2,13 +2,12 @@
 
 ## Kaffee
 
-:::{caution} VORSICHT — Heiße Oberflächen
-Brühgruppe, Auslauf und Tassenablage werden im Betrieb heiß. Das Gerät erhitzt das
-Wasser auf 85 bis 95 °C. Berühren Sie diese Teile erst, wenn sie abgekühlt sind.
+:::{needextract} WARN_OBERFLAECHE
 :::
 
 :::{proc} Kaffeestärke wählen
 :id: PROC_STAERKE
+:warns: WARN_OBERFLAECHE
 
 1. Drücken Sie die Stärketaste, bis die gewünschte Stufe leuchtet.
 2. Wählen Sie zwischen schwach, mittel und stark.
@@ -22,13 +21,12 @@ Alle drei Stufen beziehen 180 ml. Die Durchlaufzeit beträgt 3, 4 beziehungsweis
 
 ## Milchgetränke
 
-:::{warning} WARNUNG — Verbrühungsgefahr durch heißen Dampf
-Beim Aufschäumen und beim Spülen tritt heißer Dampf aus dem Milchsystem aus. Greifen
-Sie nicht in den Dampfstrahl und verstellen Sie die Düse nicht während des Betriebs.
+:::{needextract} WARN_DAMPF
 :::
 
 :::{proc} Milchgetränk zubereiten
 :id: PROC_MILCHGETRAENK
+:warns: WARN_DAMPF
 
 1. Hängen Sie den Ansaugschlauch in ein Gefäß mit kalter Milch.
 2. Stellen Sie eine Tasse unter den Auslauf.
@@ -39,8 +37,12 @@ Das {need}`GLOSS_MILCHSYSTEM` spült sich nach jedem Bezug selbst.
 
 ## Heißwasser
 
+:::{needextract} WARN_OBERFLAECHE
+:::
+
 :::{proc} Heißwasser beziehen
 :id: PROC_HEISSWASSER
+:warns: WARN_OBERFLAECHE
 
 1. Stellen Sie ein hitzebeständiges Gefäß unter den Auslauf.
 2. Drücken Sie die Heißwassertaste.

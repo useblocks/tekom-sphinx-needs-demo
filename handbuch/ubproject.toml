@@ -44,6 +44,10 @@ flow_engine = "graphviz"
 # Im Fließtext steht der Begriff, nicht die ID.
 role_need_template = "{{ title }}"
 
+# Schema-Validierung
+# https://sphinx-needs.readthedocs.io/en/latest/schema/index.html
+schema_definitions_from_json = "schemas.json"
+
 ###############################################################################
 # Need-Typen
 ###############################################################################
@@ -56,6 +60,13 @@ color = "#5DADE2"
 style = "node"
 
 [[needs.types]]
+directive = "warn"
+title = "Warnhinweis"
+prefix = "WARN_"
+color = "#F5B041"
+style = "node"
+
+[[needs.types]]
 directive = "proc"
 title = "Handlungsanweisung"
 prefix = "PROC_"
@@ -63,8 +74,53 @@ color = "#58D68D"
 style = "node"
 
 ###############################################################################
+# Darstellung
+###############################################################################
+
+# Ein Warnhinweis zeigt Warnsymbol und Signalwort im Kopf, wie es der
+# Redaktionsleitfaden verlangt. Die Verknüpfungen von Warnhinweisen und
+# Handlungsanweisungen stehen eingeklappt darunter, der Pfeil öffnet sie.
+# So sieht das Handbuch aus wie ein Handbuch, und die Daten bleiben erreichbar.
+[needs.fields.layout]
+predicates = [["type == 'warn'", "warnhinweis"]]
+
+[needs.fields.collapse]
+predicates = [["type in ['warn', 'proc']", true]]
+
+[needs.layouts.warnhinweis]
+grid = "simple"
+
+[needs.layouts.warnhinweis.layout]
+head = [
+  '⚠ **<<meta("signalwort")>>** **<<meta("title")>>** <<meta_id()>> <<collapse_button("meta", collapsed="icon:arrow-down-circle", visible="icon:arrow-right-circle", initial=False)>>',
+]
+meta = [
+  '<<meta_all(no_links=True, exclude=["signalwort", "layout"])>>',
+  '<<meta_links_all()>>',
+]
+
+###############################################################################
+# Felder
+###############################################################################
+
+# Signalwort nach ISO 3864 / ANSI Z535.
+# Absichtlich nicht "severity": im Schwesterprojekt ist das die HARA-Einstufung,
+# und Feldschemas gelten projektweit für jeden Need, der das Feld setzt.
+[needs.fields.signalwort]
+description = "Signalwort des Warnhinweises"
+nullable = true
+# Die erlaubten Werte prüft die Regel warn-braucht-signalwort in schemas.json.
+# Ein Enum an dieser Stelle würde jeden Fehler ein zweites Mal melden,
+# und zwar mit einer englischen Meldung.
+
+###############################################################################
 # Verknüpfungen
 ###############################################################################
+
+[needs.links.warns]
+outgoing = "Sicherheitshinweise"
+incoming = "gilt für"
+color = "#F5B041"
 
 # Der Default wird über predicates gesetzt, nicht als Feld-Default.
 # Gleiches Muster wie tr_link an [needs.links.runs] im Schwesterprojekt.

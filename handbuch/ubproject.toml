@@ -41,9 +41,19 @@ id_regex = "[A-Z][A-Z0-9_]{2,40}"
 # Diagramme über Graphviz statt PlantUML: kein Java, schnelle Builds.
 flow_engine = "graphviz"
 
+# Im Fließtext steht der Begriff, nicht die ID.
+role_need_template = "{{ title }}"
+
 ###############################################################################
 # Need-Typen
 ###############################################################################
+
+[[needs.types]]
+directive = "term"
+title = "Glossareintrag"
+prefix = "GLOSS_"
+color = "#5DADE2"
+style = "node"
 
 [[needs.types]]
 directive = "proc"
@@ -51,3 +61,15 @@ title = "Handlungsanweisung"
 prefix = "PROC_"
 color = "#58D68D"
 style = "node"
+
+###############################################################################
+# Verknüpfungen
+###############################################################################
+
+# Der Default wird über predicates gesetzt, nicht als Feld-Default.
+# Gleiches Muster wie tr_link an [needs.links.runs] im Schwesterprojekt.
+[needs.links.mentions]
+outgoing = "erwähnt"
+incoming = "wird erwähnt in"
+color = "#5DADE2"
+predicates = [["type == 'proc'", "[[links_from_content()]]"]]

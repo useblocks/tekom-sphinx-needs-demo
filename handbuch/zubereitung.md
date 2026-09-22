@@ -16,8 +16,8 @@ Wasser auf 85 bis 95 °C. Berühren Sie diese Teile erst, wenn sie abgekühlt si
 
 Alle drei Stufen beziehen 180 ml. Die Durchlaufzeit beträgt 3, 4 beziehungsweise
 5 Minuten. Für ein milderes Getränk bei gleicher Menge nutzen Sie den
-{term}`Bypass`; ein feinerer {term}`Mahlgrad` verlängert die Zeit in der
-{term}`Brühgruppe`.
+{need}`GLOSS_BYPASS`; ein feinerer {need}`GLOSS_MAHLGRAD` verlängert die Zeit in der
+{need}`GLOSS_BRUEHGRUPPE`.
 :::
 
 ## Milchgetränke
@@ -34,7 +34,7 @@ Sie nicht in den Dampfstrahl und verstellen Sie die Düse nicht während des Bet
 2. Stellen Sie eine Tasse unter den Auslauf.
 3. Wählen Sie das gewünschte Milchgetränk und starten Sie den Bezug.
 
-Das {term}`Milchsystem` spült sich nach jedem Bezug selbst.
+Das {need}`GLOSS_MILCHSYSTEM` spült sich nach jedem Bezug selbst.
 :::
 
 ## Heißwasser

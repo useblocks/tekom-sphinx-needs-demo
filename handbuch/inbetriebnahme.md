@@ -27,6 +27,6 @@ Wasser auf 85 bis 95 °C. Berühren Sie diese Teile erst, wenn sie abgekühlt si
 3. Setzen Sie den Tank ein und starten Sie die Erstspülung.
 
 Unterschreitet der Füllstand das Minimum, startet das Gerät keinen Bezug und fordert
-Sie zum Nachfüllen auf. Beim ersten Start spült es die {term}`Brühgruppe`
+Sie zum Nachfüllen auf. Beim ersten Start spült es die {need}`GLOSS_BRUEHGRUPPE`
 einmal durch.
 :::

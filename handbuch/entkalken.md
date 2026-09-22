@@ -28,9 +28,9 @@ Sie das Programm nicht. Spülen Sie betroffene Hautstellen mit klarem Wasser.
 :::{proc} Entkalkungsprogramm durchlaufen lassen
 :id: PROC_ENTKALKEN_LAUF
 
-1. Starten Sie das Programm zum {term}`Entkalken` im Menü.
+1. Starten Sie das Programm zum {need}`GLOSS_ENTKALKEN` im Menü.
 2. Folgen Sie den Anzeigen; das Programm läuft rund 25 Minuten.
-3. Spülen Sie Tank und {term}`Brühgruppe` anschließend mit klarem Wasser.
+3. Spülen Sie Tank und {need}`GLOSS_BRUEHGRUPPE` anschließend mit klarem Wasser.
 
 Unterbrechen Sie das Programm nicht. Wird es abgebrochen, startet das Gerät es beim
 nächsten Einschalten erneut.

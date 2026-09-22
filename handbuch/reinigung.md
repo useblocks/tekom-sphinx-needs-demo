@@ -10,7 +10,7 @@ unter fließendes Wasser. Ziehen Sie vor jeder Reinigung den Netzstecker.
 :id: PROC_TRESTER
 
 1. Öffnen Sie die Servicetür an der rechten Geräteseite.
-2. Ziehen Sie den {term}`Tresterbehälter` zusammen mit der Restwasserschale
+2. Ziehen Sie den {need}`GLOSS_TRESTERBEHAELTER` zusammen mit der Restwasserschale
    heraus.
 3. Entleeren Sie beide, spülen Sie sie aus und setzen Sie sie wieder ein.
 
@@ -26,7 +26,7 @@ Wasser auf 85 bis 95 °C. Berühren Sie diese Teile erst, wenn sie abgekühlt si
 :id: PROC_BRUEHGRUPPE
 
 1. Schalten Sie das Gerät aus und lassen Sie es abkühlen.
-2. Entnehmen Sie die {term}`Brühgruppe` über die Servicetür.
+2. Entnehmen Sie die {need}`GLOSS_BRUEHGRUPPE` über die Servicetür.
 3. Spülen Sie sie unter fließendem Wasser ohne Spülmittel und lassen Sie sie
    abtropfen.
 :::
@@ -39,8 +39,7 @@ Sie nicht in den Dampfstrahl und verstellen Sie die Düse nicht während des Bet
 :::{proc} Milchsystem reinigen
 :id: PROC_MILCHSYSTEM
 
-1. Starten Sie nach jedem Milchbezug das Spülprogramm des {term}`Milchsystems
-   <Milchsystem>`.
+1. Starten Sie nach jedem Milchbezug das Spülprogramm des {need}`Milchsystems <GLOSS_MILCHSYSTEM>`.
 2. Zerlegen Sie den Aufschäumer einmal wöchentlich.
 3. Reinigen Sie die Einzelteile in warmem Wasser und setzen Sie sie trocken wieder
    zusammen.

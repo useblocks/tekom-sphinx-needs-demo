@@ -1,0 +1,16 @@
+[project]
+name = "tekom-sphinx-needs-demo"
+version = "0.1.0"
+description = "Demo-Projekt fuer den tekom-Vortrag 'Docs as Code fuer Fortgeschrittene: Das Potenzial von Sphinx-Needs'"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "sphinx>=8.2.3",
+    "sphinx-needs[plotting]>=8.3.0,<9",
+    "myst-parser>=4.0.0",
+    "furo>=2024.8.6",
+    "sphinx-autobuild>=2024.10.3",
+]
+
+[tool.uv]
+managed = true

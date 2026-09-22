@@ -1,0 +1,12 @@
+_build/
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Nur Orientierungsmaterial, gehoert nicht ins Repo
+slides/*.pptx
+
+# Arbeitsdokumente, nicht Teil des Repos
+.agents/
+tekom_Veranstaltungsskizze_SphinxNeeds.pdf

@@ -1,0 +1,220 @@
+/* @theme useblocks-slides */
+/*
+ * UNVERAENDERTE KOPIE aus
+ *   ~/git/useblocks/rollout/library/templates/useblocks-slides.css
+ * Nicht hier bearbeiten, sondern dort — und dann neu kopieren.
+ * Alles, was nur dieser Vortrag braucht, steht im style:-Block von slides.md.
+ */
+/*
+ * useblocks 16:9 slide theme for marp — the shared core-slides set.
+ *
+ * Extracted verbatim from library/templates/slides-template.marp.md (same
+ * brand tokens as useblocks-a4.css: Inter, #1C1C1C, #E4FF3D, absolute H1
+ * action title, yellow section badge) so that a deck can REFERENCE the
+ * brand instead of copying ~80 lines of CSS into its own `style:` block.
+ * Every deck in this repo currently copies it; this file is the fix.
+ *
+ * Use it:
+ *   ---
+ *   marp: true
+ *   theme: useblocks-slides
+ *   paginate: true
+ *   html: true
+ *   backgroundImage: url(../../Resources/Internal_logos/ub_Logo.svg)
+ *   backgroundPosition: top 30px right 30px
+ *   backgroundRepeat: no-repeat
+ *   backgroundSize: 150px
+ *   ---
+ *
+ * The logo is a per-deck front-matter directive rather than a rule in here,
+ * because its relative path depends on the deck's folder depth — the same
+ * pattern the A4 document theme already uses (document-template.marp.md).
+ *
+ * Render:  marp <deck>.marp.md --theme-set library/templates --pdf
+ * (the file must come FIRST — --theme-set is an array option and swallows
+ * everything after it. .marprc.yml registers only useblocks-a4.css today;
+ * widening its `themeSet` to `library/templates/` makes the flag
+ * unnecessary. Marp does not warn about an unknown theme name — it just
+ * renders white, so a white deck means a missing --theme-set.)
+ */
+@import 'default';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+section {
+  font-family: 'Inter', sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  color: #CECECE;
+  /* 112px in the template, which assumes a one-line H1 — action titles
+     (BP_PRESENTATIONS) routinely run to two, and at 33px/1.18 those end at
+     118px. 132px clears a two-line title with air below it. */
+  padding-top: 132px;
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: #1C1C1C;
+  justify-content: flex-start;
+  align-content: flex-start;
+  position: relative;
+}
+section::after {
+  font-size: 15px;
+  color: #656565;
+}
+h1 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 33px;
+  line-height: 1.18;
+  color: #FFFFFF;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  max-width: 960px;
+  margin: 0;
+  padding: 0;
+}
+h2 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color: #CECECE;
+  margin-top: 0;
+  padding-top: 0;
+}
+h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color: #656565;
+  margin-top: 0;
+  padding-top: 0;
+  font-size: 21px;
+}
+h4 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color: #FFFFFF;
+  margin: 0;
+}
+section > :first-child { margin-top: 0; }
+strong { color: #E4FF3D; }
+em { color: #FFFFFF; font-style: normal; font-weight: 700; }
+a { color: #E4FF3D; }
+table { font-size: 21px; }
+th { background-color: #292929; color: #E4FF3D; border: 1px solid #E4FF3D; }
+td { border: 1px solid #404040; }
+code {
+  background-color: #292929;
+  color: #E4FF3D;
+  font-size: 20px;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+pre {
+  background-color: #292929;
+  border: 1px solid #404040;
+  border-radius: 8px;
+  padding: 14px 18px;
+}
+pre code { background-color: transparent; color: #CECECE; padding: 0; }
+blockquote {
+  border-left: 4px solid #E4FF3D;
+  padding: 4px 0 4px 18px;
+  color: #CECECE;
+}
+
+/* --- reusable slide furniture ------------------------------------------
+ * Only what a deck needs to make a visual carry its message without
+ * inventing per-deck CSS (BP_PRESENTATIONS: "the visual must carry the
+ * message — a 4-bullet list is a text document").
+ */
+
+/* section pill, top-left: the module or track this slide belongs to */
+.badge {
+  position: absolute;
+  top: 0;
+  left: 40px;
+  display: inline-block;
+  background-color: #E4FF3D;
+  color: #1C1C1C;
+  font-size: 17px;
+  font-weight: 700;
+  padding: 3px 44px;
+  border-radius: 0 0 10px 10px;
+  z-index: 10;
+  min-width: 120px;
+  text-align: center;
+}
+
+/* claim-maturity marker (BP_DEMO_CLAIMS) — a slide statement that travels
+   without you must carry its own maturity. Add .early / .roadmap for the
+   non-shipping ones. */
+.claim {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  border: 1px solid #E4FF3D;
+  color: #E4FF3D;
+  border-radius: 4px;
+  padding: 1px 10px;
+}
+/* the punchline of a slide — one sentence, large, in brand yellow.
+   Distinct from `.claim`, which is a small status pill. */
+.lead {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #E4FF3D;
+  margin-top: 28px;
+  margin-bottom: 42px;
+  max-width: 90%;
+}
+
+.claim.early { border-color: #F4B183; color: #F4B183; }
+.claim.roadmap { border-color: #777777; color: #777777; }
+
+/* two/three column grid */
+/* Two-column compare grid. min-height makes the cards fill the slide instead
+   of hugging the top third — these decks are one dense slide per value, not a
+   sequence of near-empty ones. */
+.cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  min-height: 240px;
+  align-items: stretch;
+}
+.cols3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+
+/* bordered panel — the unit a comparison is built from */
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #292929;
+  border: 1px solid #404040;
+  border-radius: 10px;
+  padding: 16px 20px;
+  font-size: 21px;
+}
+.card.accent { border-color: #E4FF3D; }
+.card h4 { margin-bottom: 8px; }
+.card ul { margin: 0; padding-left: 20px; }
+.card li { margin: 4px 0; }
+
+/* Left-to-right chain of pills, for "A -> B -> C" without a diagram file.
+   Write the arrows as plain text between the spans — a flex container turns
+   the bare text nodes into their own items:
+     <div class="chain"><span>Requirement</span> → <span>Test</span></div> */
+.chain { display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+         color: #777777; }
+.chain > span {
+  background-color: #292929;
+  border: 1px solid #777777;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+.chain > span.accent { border-color: #E4FF3D; color: #E4FF3D; }
+
+/* quiet footnote line at the bottom of a slide (sources, caveats) */
+.footnote { font-size: 17px; color: #777777; margin-top: 34px; }

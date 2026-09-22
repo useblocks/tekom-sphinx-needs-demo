@@ -1,0 +1,33 @@
+{
+    // ubCode liest Konfiguration und Needs des Handbuchs.
+    "sphinx-needs.needsJson": "${workspaceFolder}/_build/html/needs.json",
+    "sphinx-needs.srcDir": "${workspaceFolder}/handbuch/",
+
+    // Auf der Bühne soll der Explorer nach Redaktion aussehen, nicht nach Repo.
+    "files.exclude": {
+        "**/.*": true,
+        // "_build": true,
+        "uv.lock": true,
+        "pyproject.toml": true,
+        "**/__pycache__": true
+    },
+
+    // Marp-Vorschau in VS Code: ohne diese beiden Zeilen kennt die Extension
+    // weder das Firmentheme noch die HTML-Schnipsel (badge, title-divider).
+    "markdown.marp.themes": [
+        "./slides/useblocks-slides.css"
+    ],
+    "markdown.marp.enableHtml": true,
+
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "editor.rulers": [90],
+    "editor.wordWrap": "on",
+
+    "[markdown]": {
+        "editor.tabSize": 2,
+        "editor.quickSuggestions": {
+            "other": true
+        }
+    }
+}

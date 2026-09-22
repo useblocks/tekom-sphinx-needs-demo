@@ -1,0 +1,173 @@
+/* Darstellung der Needs im Furo-Theme.
+ *
+ * Zwei Dinge passieren hier:
+ *
+ * 1. Sphinx-Needs bringt feste Farben mit (helles Grau als Hintergrund, dunkle
+ *    Schrift). Furo schaltet zwischen hell und dunkel um und setzt die Schriftfarbe
+ *    dabei auf hell. Auf dem hellen Grau ist davon wenig zu erkennen. Deshalb
+ *    koppeln wir die Farbvariablen von Sphinx-Needs an die von Furo. Damit folgt
+ *    jeder Need dem Theme, ohne dass wir zwei Farbsaetze pflegen.
+ *
+ * 2. Jeder Typ bekommt einen farbigen Balken an der linken Kante und eine
+ *    eingefaerbte Kopfzeile: Warnhinweise orange, Gefaehrdungen rot, der Rest
+ *    ruhiger. Die Farben sind dieselben wie in ubproject.toml, nur auf Kontrast
+ *    getrimmt.
+ *
+ * Eingebunden ueber html_static_path und html_css_files, in beiden Projekten.
+ */
+
+/* ------------------------------------------------------------------ */
+/* 1. Farbvariablen von Sphinx-Needs an Furo koppeln                   */
+/* ------------------------------------------------------------------ */
+
+body {
+  --sn-color-need-bg: var(--color-background-secondary);
+  --sn-color-need-bg-head: var(--color-background-hover);
+  --sn-color-need-border: var(--color-background-border);
+  --sn-color-need-row-border: var(--color-background-border);
+
+  --sn-color-bg-gray: var(--color-background-hover);
+  --sn-color-bg-lightgray: var(--color-background-hover);
+
+  --sn-color-datatable-label: var(--color-foreground-primary);
+  --sn-color-datatable-btn-border: var(--color-background-border);
+
+  /* Akzente im hellen Theme */
+  --needs-akzent-warn: #c2410c;
+  --needs-akzent-hazard: #b91c1c;
+  --needs-akzent-proc: #15803d;
+  --needs-akzent-term: #1d4ed8;
+  --needs-akzent-feature: #7e22ce;
+  --needs-akzent-variant: #475569;
+  --needs-akzent-extern: #0e7490;
+}
+
+/* Akzente im dunklen Theme: dieselben Farbtoene, heller, damit sie auf dunklem
+ * Grund noch tragen. Beide Schreibweisen, weil Furo den Umschalter und die
+ * Systemeinstellung getrennt behandelt. */
+body[data-theme="dark"] {
+  --needs-akzent-warn: #fb923c;
+  --needs-akzent-hazard: #f87171;
+  --needs-akzent-proc: #4ade80;
+  --needs-akzent-term: #60a5fa;
+  --needs-akzent-feature: #c084fc;
+  --needs-akzent-variant: #94a3b8;
+  --needs-akzent-extern: #22d3ee;
+}
+
+@media (prefers-color-scheme: dark) {
+  body:not([data-theme="light"]) {
+    --needs-akzent-warn: #fb923c;
+    --needs-akzent-hazard: #f87171;
+    --needs-akzent-proc: #4ade80;
+    --needs-akzent-term: #60a5fa;
+    --needs-akzent-feature: #c084fc;
+    --needs-akzent-variant: #94a3b8;
+    --needs-akzent-extern: #22d3ee;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* 2. Rahmen und Kopfzeile je Typ                                      */
+/* ------------------------------------------------------------------ */
+
+/* Die dreifache Klasse ist die Schreibweise von Sphinx-Needs selbst: Sie hebt
+ * die Spezifitaet ueber die des Themes, ohne !important. */
+table.need.need.need {
+  --needs-akzent: var(--color-background-border);
+  border-left: 4px solid var(--needs-akzent);
+  color: var(--color-foreground-primary);
+}
+
+table.need.need.need.needs_type_warn { --needs-akzent: var(--needs-akzent-warn); }
+table.need.need.need.needs_type_hazard { --needs-akzent: var(--needs-akzent-hazard); }
+table.need.need.need.needs_type_proc { --needs-akzent: var(--needs-akzent-proc); }
+table.need.need.need.needs_type_term { --needs-akzent: var(--needs-akzent-term); }
+table.need.need.need.needs_type_feature { --needs-akzent: var(--needs-akzent-feature); }
+table.need.need.need.needs_type_variant { --needs-akzent: var(--needs-akzent-variant); }
+table.need.need.need.needs_type_extern { --needs-akzent: var(--needs-akzent-extern); }
+
+/* Kopfzeile: erst ein Wert, den jeder Browser versteht, danach der getoente.
+ * Versteht ein Browser color-mix nicht, bleibt die erste Zeile stehen. */
+table.need.need.need > tbody > tr.head {
+  background-color: var(--color-background-hover);
+  background-color: color-mix(in srgb, var(--needs-akzent) 14%, transparent);
+}
+
+/* Typname in der Kopfzeile in der Akzentfarbe: Warnhinweis orange,
+ * Gefaehrdung rot. Damit ist die Art des Objekts vor dem Lesen erkennbar. */
+table.need.need.need > tbody > tr.head .needs_type_name {
+  color: var(--needs-akzent);
+  font-weight: 600;
+}
+
+/* Metazeile ruhiger als der Inhalt */
+table.need.need.need > tbody > tr.meta {
+  color: var(--color-foreground-secondary);
+}
+
+table.need.need.need > tbody > tr.meta a,
+table.need.need.need .needs-id a {
+  color: var(--color-brand-content);
+}
+
+/* ------------------------------------------------------------------ */
+/* 3. Tabellen aus needtable                                           */
+/* ------------------------------------------------------------------ */
+
+table.NEEDS_TABLE.NEEDS_TABLE th,
+table.NEEDS_DATATABLES.NEEDS_DATATABLES th {
+  background-color: var(--color-table-header-background);
+  color: var(--color-foreground-primary);
+}
+
+table.NEEDS_TABLE.NEEDS_TABLE td,
+table.NEEDS_DATATABLES.NEEDS_DATATABLES td {
+  border-color: var(--color-table-border);
+}
+
+/* ------------------------------------------------------------------ */
+/* 4. Bilder aus needpie und needflow                                  */
+/* ------------------------------------------------------------------ */
+
+/* Matplotlib und Graphviz zeichnen auf weissem Grund, das laesst sich von
+ * aussen nicht umfaerben. Im dunklen Theme bekommen die Bilder deshalb einen
+ * Rahmen mit etwas Luft, damit sie wie eine Karte wirken und nicht wie ein
+ * Loch in der Seite. */
+body[data-theme="dark"] img[src*="need_pie"],
+body[data-theme="dark"] img[src*="needflow"] {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  body:not([data-theme="light"]) img[src*="need_pie"],
+  body:not([data-theme="light"]) img[src*="needflow"] {
+    background: #ffffff;
+    border-radius: 6px;
+    padding: 0.5rem;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* 5. Warnhinweise mit Signalwort im Kopf                              */
+/* ------------------------------------------------------------------ */
+
+/* Das Layout "warnhinweis" aus ubproject.toml setzt Warnsymbol, Signalwort und
+ * Titel in die Kopfzeile. Das Signalwort bekommt die Akzentfarbe und steht in
+ * Versalien vorn, wie es Redaktionsleitfaeden nach ANSI Z535 verlangen. */
+table.need.need.need.needs_layout_warnhinweis > tbody > tr.head {
+  color: var(--needs-akzent);
+  font-size: 1.05em;
+}
+
+table.need.need.need.needs_layout_warnhinweis > tbody > tr.head strong:first-of-type {
+  color: var(--needs-akzent);
+  letter-spacing: 0.04em;
+  margin-right: 0.35em;
+}
+
+table.need.need.need.needs_layout_warnhinweis > tbody > tr.head strong + strong {
+  color: var(--color-foreground-primary);
+}

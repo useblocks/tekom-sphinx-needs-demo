@@ -1,7 +1,7 @@
 # Redaktionsübersicht
 
 Diese Seite richtet sich nicht an die Nutzerin, sondern an die Redaktion. Sie entsteht
-vollständig aus den Daten der Anleitung — hier wird nichts gepflegt.
+vollständig aus den Daten der Anleitung. Hier wird nichts von Hand gepflegt.
 
 Die Anleitung enthält {need_count}`type == "proc"` Handlungsanweisungen, davon
 {need_count}`type == "proc" and status == "freigegeben"` freigegeben.
@@ -67,3 +67,20 @@ in `schemas.json` und wird bei jedem Build geprüft.
 :link_types: covers
 :config: lefttoright
 :::
+
+## Brücke zum Entwicklungsprojekt
+
+Dieselbe Maschine wird im Projekt der Softwareentwicklung dokumentiert. Wo es dort eine
+Entsprechung gibt, ist sie hier verknüpft. Wo keine steht, bleibt die Tabelle leer.
+Die leeren Zeilen sind der interessante Teil.
+
+:::{needtable}
+:filter: type == "feature"
+:columns: id, title as "Merkmal", realisiert_durch as "Im Entwicklungsprojekt"
+:style: table
+:sort: title
+:::
+
+Umgekehrt weiß das Entwicklungsprojekt nichts von Mahlwerk, Milchsystem oder
+Entkalkungsprogramm. Beide Seiten beschreiben dasselbe Produkt und wissen
+Unterschiedliches darüber.

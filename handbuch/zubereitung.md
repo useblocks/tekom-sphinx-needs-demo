@@ -5,12 +5,15 @@
 :::{needextract} WARN_OBERFLAECHE
 :::
 
+:::{needextract} WARN_UEBERLAUF
+:::
+
 :::{proc} Kaffeestärke wählen
 :id: PROC_STAERKE
 :status: freigegeben
 :autor: S. Ostermann
 :geprueft_am: 2026-06-03
-:warns: WARN_OBERFLAECHE
+:warns: WARN_OBERFLAECHE, WARN_UEBERLAUF
 
 1. Drücken Sie die Stärketaste, bis die gewünschte Stufe leuchtet.
 2. Wählen Sie zwischen schwach, mittel und stark.
@@ -29,12 +32,15 @@ Alle drei Stufen beziehen 180 ml. Die Durchlaufzeit beträgt 3, 4 beziehungsweis
 :::{needextract} WARN_DAMPF
 :::
 
+:::{needextract} WARN_UEBERLAUF
+:::
+
 :::{proc} Milchgetränk zubereiten
 :id: PROC_MILCHGETRAENK
 :status: review
 :autor: S. Ostermann
 :requires: FEAT_MILCHSYSTEM
-:warns: WARN_DAMPF
+:warns: WARN_DAMPF, WARN_UEBERLAUF
 
 1. Hängen Sie den Ansaugschlauch in ein Gefäß mit kalter Milch.
 2. Stellen Sie eine Tasse unter den Auslauf.
@@ -50,12 +56,15 @@ Das {need}`GLOSS_MILCHSYSTEM` spült sich nach jedem Bezug selbst.
 :::{needextract} WARN_OBERFLAECHE
 :::
 
+:::{needextract} WARN_UEBERLAUF
+:::
+
 :::{proc} Heißwasser beziehen
 :id: PROC_HEISSWASSER
 :status: entwurf
 :autor: S. Ostermann
 :requires: FEAT_HEISSWASSER
-:warns: WARN_OBERFLAECHE
+:warns: WARN_OBERFLAECHE, WARN_UEBERLAUF
 
 1. Stellen Sie ein hitzebeständiges Gefäß unter den Auslauf.
 2. Drücken Sie die Heißwassertaste.

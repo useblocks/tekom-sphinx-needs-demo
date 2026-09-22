@@ -54,3 +54,12 @@ unter fließendes Wasser. Ziehen Sie vor jeder Reinigung den Netzstecker.
 Das Mahlwerk läuft ohne Vorwarnung an. Greifen Sie nicht in den Bohnenbehälter und
 führen Sie keine Gegenstände ein, solange das Gerät am Netz angeschlossen ist.
 :::
+
+:::{warn} Verbrühungsgefahr durch überlaufendes Getränk
+:id: WARN_UEBERLAUF
+:signalwort: VORSICHT
+:covers: HAZ_UEBERLAUF
+
+Starten Sie einen Bezug nur mit einem ausreichend großen, hitzebeständigen Gefäß.
+Läuft das Getränk über, kann heiße Flüssigkeit über die Tassenablage laufen.
+:::

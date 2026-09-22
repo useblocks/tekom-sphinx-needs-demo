@@ -1,0 +1,229 @@
+{
+  "created": "Auszug aus sphinx-needs-demo, erzeugt von scripts/sw_projekt_auszug.py",
+  "current_version": "1.0",
+  "project": "Sphinx-Needs Demo (Entwicklungsprojekt)",
+  "versions": {
+    "1.0": {
+      "needs": {
+        "COMP_UI_MODULE": {
+          "type": "extern",
+          "quelltyp": "Komponente",
+          "title": "User Interface Module",
+          "docname": "coffee-machine/architecture",
+          "id": "COMP_UI_MODULE"
+        },
+        "COMP_BREW_CTRL": {
+          "type": "extern",
+          "quelltyp": "Komponente",
+          "title": "Brew Controller Module",
+          "docname": "coffee-machine/architecture",
+          "id": "COMP_BREW_CTRL"
+        },
+        "INTF_USER_CMD": {
+          "type": "extern",
+          "quelltyp": "Schnittstelle",
+          "title": "User Command Interface",
+          "docname": "coffee-machine/architecture",
+          "id": "INTF_USER_CMD"
+        },
+        "INTF_BREW_CTRL_STATUS": {
+          "type": "extern",
+          "quelltyp": "Schnittstelle",
+          "title": "Brew Controller Safety Status Interface",
+          "docname": "coffee-machine/architecture",
+          "id": "INTF_BREW_CTRL_STATUS"
+        },
+        "COMP_TEMP_CTRL": {
+          "type": "extern",
+          "quelltyp": "Komponente",
+          "title": "Temperature Controller Module",
+          "docname": "coffee-machine/architecture",
+          "id": "COMP_TEMP_CTRL"
+        },
+        "INTF_TEMP_STATUS": {
+          "type": "extern",
+          "quelltyp": "Schnittstelle",
+          "title": "Temperature Status Interface",
+          "docname": "coffee-machine/architecture",
+          "id": "INTF_TEMP_STATUS"
+        },
+        "INTF_TEMP_CTRL_STATUS": {
+          "type": "extern",
+          "quelltyp": "Schnittstelle",
+          "title": "Temperature Controller Safety Status Interface",
+          "docname": "coffee-machine/architecture",
+          "id": "INTF_TEMP_CTRL_STATUS"
+        },
+        "COMP_SAFETY_MON": {
+          "type": "extern",
+          "quelltyp": "Komponente",
+          "title": "Safety Monitor Module",
+          "docname": "coffee-machine/architecture",
+          "id": "COMP_SAFETY_MON"
+        },
+        "INTF_SAFETY_CMD": {
+          "type": "extern",
+          "quelltyp": "Schnittstelle",
+          "title": "Safety Command Interface",
+          "docname": "coffee-machine/architecture",
+          "id": "INTF_SAFETY_CMD"
+        },
+        "COMP_ADC_DRV": {
+          "type": "extern",
+          "quelltyp": "Komponente",
+          "title": "ADC Driver",
+          "docname": "coffee-machine/architecture",
+          "id": "COMP_ADC_DRV"
+        },
+        "COMP_PWM_DRV": {
+          "type": "extern",
+          "quelltyp": "Komponente",
+          "title": "PWM Driver",
+          "docname": "coffee-machine/architecture",
+          "id": "COMP_PWM_DRV"
+        },
+        "COMP_GPIO_DRV": {
+          "type": "extern",
+          "quelltyp": "Komponente",
+          "title": "GPIO Driver",
+          "docname": "coffee-machine/architecture",
+          "id": "COMP_GPIO_DRV"
+        },
+        "COMP_SPI_DRV": {
+          "type": "extern",
+          "quelltyp": "Komponente",
+          "title": "SPI Driver",
+          "docname": "coffee-machine/architecture",
+          "id": "COMP_SPI_DRV"
+        },
+        "INTF_PWM_CTRL": {
+          "type": "extern",
+          "quelltyp": "Schnittstelle",
+          "title": "PWM Control Interface",
+          "docname": "coffee-machine/architecture",
+          "id": "INTF_PWM_CTRL"
+        },
+        "INTF_GPIO": {
+          "type": "extern",
+          "quelltyp": "Schnittstelle",
+          "title": "GPIO Interface",
+          "docname": "coffee-machine/architecture",
+          "id": "INTF_GPIO"
+        },
+        "INTF_SPI_BUS": {
+          "type": "extern",
+          "quelltyp": "Schnittstelle",
+          "title": "SPI Bus Interface",
+          "docname": "coffee-machine/architecture",
+          "id": "INTF_SPI_BUS"
+        },
+        "INTF_SENSOR_DATA": {
+          "type": "extern",
+          "quelltyp": "Schnittstelle",
+          "title": "Sensor Data Interface",
+          "docname": "coffee-machine/architecture",
+          "id": "INTF_SENSOR_DATA"
+        },
+        "REQ_BREW_COFFEE": {
+          "type": "extern",
+          "quelltyp": "Anforderung",
+          "title": "Brew Coffee",
+          "docname": "coffee-machine/requirements",
+          "id": "REQ_BREW_COFFEE"
+        },
+        "REQ_HEAT_WATER": {
+          "type": "extern",
+          "quelltyp": "Anforderung",
+          "title": "Heat Water",
+          "docname": "coffee-machine/requirements",
+          "id": "REQ_HEAT_WATER"
+        },
+        "REQ_USER_INTERFACE": {
+          "type": "extern",
+          "quelltyp": "Anforderung",
+          "title": "User Interface",
+          "docname": "coffee-machine/requirements",
+          "id": "REQ_USER_INTERFACE"
+        },
+        "REQ_SAFETY_SHUTDOWN": {
+          "type": "extern",
+          "quelltyp": "Anforderung",
+          "title": "Safety Shutdown",
+          "docname": "coffee-machine/requirements",
+          "id": "REQ_SAFETY_SHUTDOWN"
+        },
+        "SWREQ_TEMP_REGULATION": {
+          "type": "extern",
+          "quelltyp": "SW-Anforderung",
+          "title": "Temperature Regulation",
+          "docname": "coffee-machine/sw_requirements",
+          "id": "SWREQ_TEMP_REGULATION"
+        },
+        "SWREQ_OVERTEMP_SHUTDOWN": {
+          "type": "extern",
+          "quelltyp": "SW-Anforderung",
+          "title": "Over-Temperature Shutdown",
+          "docname": "coffee-machine/sw_requirements",
+          "id": "SWREQ_OVERTEMP_SHUTDOWN"
+        },
+        "SWREQ_BREW_STRENGTH": {
+          "type": "extern",
+          "quelltyp": "SW-Anforderung",
+          "title": "Brew Strength Selection",
+          "docname": "coffee-machine/sw_requirements",
+          "id": "SWREQ_BREW_STRENGTH"
+        },
+        "SWREQ_BUTTON_INPUT": {
+          "type": "extern",
+          "quelltyp": "SW-Anforderung",
+          "title": "Button Input Handler",
+          "docname": "coffee-machine/sw_requirements",
+          "id": "SWREQ_BUTTON_INPUT"
+        },
+        "SWREQ_WATER_LEVEL": {
+          "type": "extern",
+          "quelltyp": "SW-Anforderung",
+          "title": "Water Level Monitoring",
+          "docname": "coffee-machine/sw_requirements",
+          "id": "SWREQ_WATER_LEVEL"
+        },
+        "TEST_TEMP_CONTROL": {
+          "type": "extern",
+          "quelltyp": "Testfall",
+          "title": "Test Temperature Control",
+          "docname": "coffee-machine/testing",
+          "id": "TEST_TEMP_CONTROL"
+        },
+        "TEST_BREW_STRENGTH": {
+          "type": "extern",
+          "quelltyp": "Testfall",
+          "title": "Test Brew Strength Settings",
+          "docname": "coffee-machine/testing",
+          "id": "TEST_BREW_STRENGTH"
+        },
+        "TEST_BUTTON_DEBOUNCE": {
+          "type": "extern",
+          "quelltyp": "Testfall",
+          "title": "Test Button Debouncing",
+          "docname": "coffee-machine/testing",
+          "id": "TEST_BUTTON_DEBOUNCE"
+        },
+        "TEST_SAFETY_SHUTDOWN": {
+          "type": "extern",
+          "quelltyp": "Testfall",
+          "title": "Test Safety Shutdown",
+          "docname": "coffee-machine/testing",
+          "id": "TEST_SAFETY_SHUTDOWN"
+        },
+        "TEST_E2E_BREWING": {
+          "type": "extern",
+          "quelltyp": "Testfall",
+          "title": "Test End-to-End Brewing",
+          "docname": "coffee-machine/testing",
+          "id": "TEST_E2E_BREWING"
+        }
+      },
+      "version": "1.0"
+    }
+  }
+}

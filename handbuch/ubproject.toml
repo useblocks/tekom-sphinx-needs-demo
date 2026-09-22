@@ -47,7 +47,8 @@ id_regex = "[A-Z][A-Z0-9_]{2,40}"
 # Diagramme über Graphviz statt PlantUML: kein Java, schnelle Builds.
 flow_engine = "graphviz"
 
-# Im Fließtext steht der Begriff, nicht die ID.
+# Im Fließtext steht der Begriff, nicht die ID. Default wäre "{{ title }} ({{ id }})",
+# und "Bypass (GLOSS_BYPASS)" liest sich in einem Benutzerhandbuch schlecht.
 role_need_template = "{{ title }}"
 
 # Schema-Validierung
@@ -106,6 +107,16 @@ prefix = "VAR_"
 color = "#85929E"
 style = "node"
 
+# Kein Typ des Handbuchs, sondern die Klammer um alles, was aus dem
+# Entwicklungsprojekt herüberreicht. Es gibt dafuer keine Direktive:
+# Objekte dieses Typs entstehen ausschließlich aus external_needs.
+[[needs.types]]
+directive = "extern"
+title = "Objekt im Entwicklungsprojekt"
+prefix = "EXT_"
+color = "#2d86c1"
+style = "node"
+
 ###############################################################################
 # Darstellung
 ###############################################################################
@@ -154,6 +165,10 @@ nullable = true
 description = "Datum der letzten fachlichen Prüfung"
 nullable = true
 
+[needs.fields.quelltyp]
+description = "Artefaktart im Entwicklungsprojekt"
+nullable = true
+
 # Feld mit Variantenauflösung: <{ var.produkt.name }>
 [needs.fields.geraet]
 description = "Gerätebezeichnung der gebauten Variante"
@@ -191,3 +206,16 @@ color = "#AF7AC5"
 outgoing = "Ausstattung"
 incoming = "enthalten in"
 color = "#85929E"
+
+# Die Brücke zum Entwicklungsprojekt derselben Maschine.
+# Die Datei ist ein eingecheckter Auszug aus ../sphinx-needs-demo, erzeugt von
+# `make sw-projekt`. Zur Bauzeit wird das Nachbarrepo nicht gebraucht.
+[needs.links.realisiert_durch]
+outgoing = "realisiert durch"
+incoming = "beschrieben in"
+color = "#2d86c1"
+
+[[needs.external_needs]]
+json_path = "./_data/sw-projekt.json"
+base_url = "https://sphinx-needs-demo.readthedocs.io/en/latest"
+target_url = "{{need['docname']}}.html#{{need['id']}}"

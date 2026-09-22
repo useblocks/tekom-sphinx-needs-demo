@@ -25,6 +25,7 @@ Diese Anleitung gilt für die Baureihe BrewMaster Pro 3000. Sie halten die Varia
 
 :::{feature} Drei Kaffeestärken
 :id: FEAT_KAFFEESTAERKE
+:realisiert_durch: SWREQ_BREW_STRENGTH
 
 Stärkewahl schwach, mittel und stark mit je 180 ml Bezugsmenge.
 :::
